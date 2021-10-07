@@ -1,0 +1,436 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;900&family=Fraunces:wght@700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: "Fraunces", sans-serif;
+}
+
+::-moz-selection {
+  background-color: #19536b;
+  color: white;
+}
+
+::selection {
+  background-color: #19536b;
+  color: white;
+}
+
+main header {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+main header .background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+}
+
+main header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px 30px;
+}
+
+main header nav .brand-logo {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+  font-family: "Barlow", sans-serif;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+}
+
+main header nav .nav {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main header nav .nav li {
+  margin-left: 25px;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+}
+
+main header nav .nav li a {
+  text-decoration: none;
+  color: white;
+}
+
+main header nav .nav li a:hover {
+  color: #19536b;
+}
+
+main header nav .nav li a.contact-btn {
+  display: inline-block;
+  padding: 15px 20px;
+  background-color: white;
+  color: #23303e;
+  border-radius: 50px;
+  font-family: "Fraunces", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+main header nav .nav li a.contact-btn:hover {
+  background-color: #19536b;
+  color: white;
+}
+
+main header .hero {
+  display: block;
+  width: 50%;
+  margin: 65px auto 0;
+}
+
+main header .hero h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+main .about {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+main .about-card {
+  height: 500px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 80px;
+}
+
+main .about-card.bottom {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+main .about-card.bottom.photo h3 {
+  color: #19536b;
+}
+
+main .about-card.bottom.photo p {
+  width: 50%;
+  color: #19536b;
+}
+
+main .about-card.bottom h3,
+main .about-card.bottom p {
+  text-align: center;
+  padding: 0;
+}
+
+main .about-card.bottom h3 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #25564b;
+}
+
+main .about-card.bottom p {
+  width: 50%;
+  margin-bottom: 30px;
+  color: #25564b;
+}
+
+main .about-card h3 {
+  font-size: 2rem;
+  color: #23303e;
+  margin-bottom: 10px;
+  padding-right: 80px;
+  width: 70%;
+}
+
+main .about-card h3.standout {
+  padding-right: 40px;
+}
+
+main .about-card p {
+  width: 68%;
+  font-size: 0.9rem;
+  color: #5a636c;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  padding-right: 40px;
+  line-height: 1.5;
+}
+
+main .about-card .link {
+  font-size: .8rem;
+  position: relative;
+  margin-top: 15px;
+  color: #23303e;
+  text-decoration: none;
+  text-transform: uppercase;
+  z-index: 3;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+main .about-card .link.red::after {
+  background-color: #fe7867;
+}
+
+main .about-card .link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 7px;
+  border-radius: 50px;
+  background-color: #fad400;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+main .about-card .link:hover::after {
+  opacity: 1;
+}
+
+main .about-card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main .about-card img.bg-image {
+  z-index: -1;
+}
+
+main .testimonial {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .testimonial h3 {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #5a636c;
+  margin-bottom: 60px;
+}
+
+main .testimonial-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+main .testimonial-cards .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 25%;
+}
+
+main .testimonial-cards .card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 25px;
+}
+
+main .testimonial-cards .card p {
+  text-align: center;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #5a636c;
+}
+
+main .testimonial-cards .card footer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+main .testimonial-cards .card footer small {
+  font-family: "Barlow", sans-serif;
+  color: #5a636c;
+  font-weight: 600;
+}
+
+main .image-gallery {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+}
+
+main .image-gallery img {
+  width: 100%;
+  height: 100%;
+}
+
+main .footer {
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  background-color: #458c7e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main .footer h2 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #25564b;
+  font-family: "Barlow", sans-serif;
+}
+
+main .footer .nav {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .footer .nav li {
+  margin: 0 25px;
+}
+
+main .footer .nav li a {
+  color: white;
+  text-decoration: none;
+  font-family: "Barlow", sans-serif;
+  color: #25564b;
+  font-weight: 600;
+}
+
+main .footer .nav li a:hover {
+  color: white;
+}
+
+main .footer .media {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .footer .media li {
+  margin: 0 10px;
+}
+
+main .footer .media li a {
+  color: white;
+  text-decoration: none;
+  font-family: "Barlow", sans-serif;
+  color: #25564b;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+main .footer .media li a:hover {
+  color: white;
+}

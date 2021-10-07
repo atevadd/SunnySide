@@ -1,0 +1,409 @@
+// Primary
+$soft-red: hsl(7, 99%, 70%);
+$yellow: hsl(51, 100%, 49%);
+$Dark-desaturated-cyan: hsl(167, 40%, 24%);
+$Dark-blue: hsl(198, 62%, 26%);
+$Dark-moderate-cyan: hsl(168, 34%, 41%);
+
+// Neutral
+$Very-dark-desaturated-blue: hsl(212, 27%, 19%);
+$Very-dark-grayish-blue: hsl(213, 9%, 39%);
+$Dark-grayish-blue: hsl(232, 10%, 55%);
+$Grayish-blue: hsl(206, 30%, 14%);
+$White: hsl(0, 0%, 100%);
+
+// Font weight
+$w-600: 600;
+$w-700: 700;
+$w-900: 900;
+
+// Media query
+// mobile device
+@mixin mobile {
+  @media screen and (max-width: 599px) {
+    @content;
+  }
+}
+
+//tablet device
+@mixin tablet {
+  @media screen and (min-width: 600px) and (max-width: 900px) {
+    @content;
+  }
+}
+
+// Fonts import
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;900&family=Fraunces:wght@700;900&display=swap");
+
+$main-font: "Fraunces", sans-serif;
+$sub-font: "Barlow", sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: $main-font;
+}
+
+::selection{
+  background-color: $Dark-blue;
+  color: $White;
+}
+
+main {
+  // The header styling here
+  header {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    .background-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      // border: 1px solid;
+
+      .brand-logo {
+        display: inline-block;
+        font-size: 1.5rem;
+        font-weight: $w-700;
+        text-decoration: none;
+        color: $White;
+        font-family: $sub-font;
+        text-transform: lowercase;
+        letter-spacing: 1px;
+      }
+
+      .nav {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        li {
+          margin-left: 25px;
+          font-family: $sub-font;
+          font-weight: $w-600;
+
+          a {
+            text-decoration: none;
+            color: $White;
+
+            &:hover {
+              color: $Dark-blue;
+            }
+
+            &.contact-btn {
+              display: inline-block;
+              padding: 15px 20px;
+              background-color: $White;
+              color: $Very-dark-desaturated-blue;
+              border-radius: 50px;
+              font-family: $main-font;
+              text-transform: uppercase;
+              font-size: 0.8rem;
+
+              &:hover {
+                background-color: $Dark-blue;
+                color: $White;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .hero {
+      display: block;
+      width: 50%;
+      margin: 65px auto 0;
+      // border: 1px solid;
+
+      h1 {
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        color: $White;
+        text-align: center;
+        letter-spacing: 3px;
+      }
+    }
+  }
+
+  // The about styling here
+  .about {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    // grid-auto-rows: minmax(30vh, 50vh);
+
+    &-card {
+      height: 500px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      // padding: 60px;
+      padding-left: 80px;
+
+      &.bottom {
+        align-items: center;
+        justify-content: flex-end;
+
+        &.photo {
+          h3{
+            color: $Dark-blue;
+          }
+          p {
+            width: 50%;
+            color: $Dark-blue;
+          }
+        }
+
+        h3,
+        p {
+          text-align: center;
+          padding: 0;
+          // border: 1px solid ;
+        }
+        h3 {
+          margin-bottom: 15px;
+          // border: 1px solid ;
+          font-size: 1.5rem;
+          color: $Dark-desaturated-cyan;
+        }
+        p {
+          width: 50%;
+          margin-bottom: 30px;
+          color: $Dark-desaturated-cyan;
+        }
+      }
+
+      h3 {
+        font-size: 2rem;
+        color: $Very-dark-desaturated-blue;
+        margin-bottom: 10px;
+        padding-right: 80px;
+        // border: 1px solid;
+        width: 70%;
+
+        &.standout {
+          padding-right: 40px;
+        }
+      }
+      p {
+        width: 68%;
+        font-size: 0.9rem;
+        color: $Very-dark-grayish-blue;
+        font-family: $sub-font;
+        font-weight: $w-600;
+        padding-right: 40px;
+        // border: 1px solid;
+        line-height: 1.5;
+      }
+      .link {
+        font-size: .8rem;
+        position: relative;
+        margin-top: 15px;
+        color: $Very-dark-desaturated-blue;
+        text-decoration: none;
+        text-transform: uppercase;
+        z-index: 3;
+        transition: 0.4s;
+
+        &.red::after {
+          background-color: $soft-red;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 7px;
+          border-radius: 50px;
+          background-color: $yellow;
+          opacity: 0.5;
+          z-index: -1;
+        }
+
+        &:hover::after {
+          opacity: 1;
+        }
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        &.bg-image {
+          z-index: -1;
+        }
+      }
+    }
+  }
+
+  // The testimonial section here
+  .testimonial {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // padding: 50px 0 30px;
+
+    h3 {
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      color: $Very-dark-grayish-blue;
+      margin-bottom: 60px;
+    }
+
+    &-cards {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 25%;
+
+        img {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          margin-bottom: 25px;
+        }
+        p {
+          text-align: center;
+          font-family: $sub-font;
+          font-weight: $w-600;
+          line-height: 1.4;
+          color: $Very-dark-grayish-blue;
+        }
+
+        footer {
+          text-align: center;
+          margin-top: 30px;
+
+          small {
+            font-family: $sub-font;
+            color: $Very-dark-grayish-blue;
+            font-weight: $w-600;
+          }
+        }
+      }
+    }
+  }
+
+  // Image gallery section styling
+  .image-gallery {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  // The footer styling starts here
+  .footer {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    background-color: $Dark-moderate-cyan;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: $w-900;
+      color: $Dark-desaturated-cyan;
+      font-family: $sub-font;
+    }
+
+    .nav {
+      list-style: none;
+      display: flex;
+      align-items: center;
+
+      li {
+        margin: 0 25px;
+
+        a {
+          color: $White;
+          text-decoration: none;
+          font-family: $sub-font;
+          color: $Dark-desaturated-cyan;
+          font-weight: $w-600;
+
+          &:hover {
+            color: $White;
+          }
+        }
+      }
+    }
+
+    .media {
+      list-style: none;
+      display: flex;
+      align-items: center;
+
+      li {
+        margin: 0 10px;
+
+        a {
+          color: $White;
+          text-decoration: none;
+          font-family: $sub-font;
+          color: $Dark-desaturated-cyan;
+          font-weight: $w-600;
+          font-size: 1.2rem;
+
+          &:hover {
+            color: $White;
+          }
+        }
+      }
+    }
+  }
+}
